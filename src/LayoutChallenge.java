@@ -3,7 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 
-public class SwingControlDemo implements ActionListener {
+public class LayoutChallenge implements ActionListener {
     private JFrame mainFrame;
     private JLabel statusLabel;
     private JPanel controlPanel;
@@ -13,12 +13,12 @@ public class SwingControlDemo implements ActionListener {
     private int HEIGHT=700;
 
 
-    public SwingControlDemo() {
+    public LayoutChallenge() {
         prepareGUI();
     }
 
     public static void main(String[] args) {
-        SwingControlDemo swingControlDemo = new SwingControlDemo();
+        LayoutChallenge swingControlDemo = new LayoutChallenge();
         swingControlDemo.showEventDemo();
     }
     private void prepareGUI() {
@@ -62,8 +62,32 @@ public class SwingControlDemo implements ActionListener {
     private void showEventDemo() {
 
         JButton submitButton = new JButton("Submit");
+
+        //set color of buttons, cite: https://docs.oracle.com/en/java/javase/index.html
+        submitButton.setOpaque(true);
+        submitButton.setContentAreaFilled(true); // Ensure content area is filled
+        submitButton.setBorderPainted(false);
+
+        submitButton.setBackground(new Color(204, 229, 255));
+
+
+
         JButton resetButton = new JButton("Reset");
+
+        resetButton.setOpaque(true);
+        resetButton.setContentAreaFilled(true); // Ensure content area is filled
+        resetButton.setBorderPainted(false);
+
+        resetButton.setBackground(new Color(204, 229, 255));
+
+
         JButton capsButton = new JButton("All Caps");
+
+        capsButton.setOpaque(true);
+        capsButton.setContentAreaFilled(true); // Ensure content area is filled
+        capsButton.setBorderPainted(false);
+
+        capsButton.setBackground(new Color(204, 229, 255));
 
 
 
