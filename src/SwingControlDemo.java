@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.border.Border;
 
 public class SwingControlDemo implements ActionListener {
     private JFrame mainFrame;
@@ -20,16 +21,17 @@ public class SwingControlDemo implements ActionListener {
         SwingControlDemo swingControlDemo = new SwingControlDemo();
         swingControlDemo.showEventDemo();
     }
-
     private void prepareGUI() {
         mainFrame = new JFrame("Java SWING Examples");
         mainFrame.setSize(WIDTH, HEIGHT);
         mainFrame.setLayout(new BorderLayout());
-
+        mainFrame.setBackground(Color.BLUE);
 
         statusLabel = new JLabel("Input: ");
         ia = new JTextArea(1,50);
+        ia.setBackground(new Color(204, 229, 255)); // cite: learned this from https://javatechniques.com/blog/setting-jtextpane-font-and-color/
         ta = new JTextArea();
+        ta.setBackground(new Color(204, 229, 255));
         ta.setEditable(false);
         JPanel inputPanel = new JPanel();
         inputPanel.add(statusLabel);
@@ -62,6 +64,7 @@ public class SwingControlDemo implements ActionListener {
         JButton submitButton = new JButton("Submit");
         JButton resetButton = new JButton("Reset");
         JButton capsButton = new JButton("All Caps");
+
 
 
         submitButton.setActionCommand("Submit");
