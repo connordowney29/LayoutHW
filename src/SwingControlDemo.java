@@ -7,7 +7,7 @@ public class SwingControlDemo implements ActionListener {
     private JLabel statusLabel;
     private JPanel controlPanel;
     private JTextArea ta;
-    private JTextArea inputArea;//typing area
+    private JTextArea ia;//typing area
     private int WIDTH=800;
     private int HEIGHT=700;
 
@@ -28,12 +28,12 @@ public class SwingControlDemo implements ActionListener {
 
 
         statusLabel = new JLabel("Input: ");
-        inputArea = new JTextArea(1,50);
+        ia = new JTextArea(1,50);
         ta = new JTextArea();
         ta.setEditable(false);
         JPanel inputPanel = new JPanel();
         inputPanel.add(statusLabel);
-        inputPanel.add(inputArea);
+        inputPanel.add(ia);
 
         JScrollPane scrollPane = new JScrollPane(ta);
 
@@ -50,7 +50,6 @@ public class SwingControlDemo implements ActionListener {
         topPanel.setLayout(new GridLayout(2,1));
         topPanel.add(inputPanel);
         topPanel.add(controlPanel);
-
         mainFrame.add(topPanel, BorderLayout.NORTH);
         mainFrame.add(scrollPane, BorderLayout.CENTER);
 
@@ -92,13 +91,13 @@ public class SwingControlDemo implements ActionListener {
             String command = e.getActionCommand();
 
             if (command.equals("Submit")) {
-                ta.setText(inputArea.getText());
+                ta.setText(ia.getText());
             } else if (command.equals("Reset")) {
-                inputArea.setText("");
+                ia.setText("");
                 ta.setText("");
             }
             else if (command.equals("All Caps")) {
-                ta.setText(inputArea.getText().toUpperCase());
+                ta.setText(ia.getText().toUpperCase());
             }
         }
     }
